@@ -8,7 +8,9 @@ export default function EventItem({ event }) {
 			<div className={styles.img}>
 				<Image
 					src={
-						event.image ? event.image : '/images/event-default.png'
+						event.image
+							? event.image.formats.thumbnail.url
+							: '/images/event-default.png'
 					}
 					width={170}
 					height={100}
@@ -17,7 +19,8 @@ export default function EventItem({ event }) {
 			</div>
 			<div className={styles.info}>
 				<span>
-					{event.date} at {event.time}
+					{new Date(event.date).toLocaleDateString('en-UK')} at{' '}
+					{event.time}
 				</span>
 				<h3>{event.name}</h3>
 			</div>
