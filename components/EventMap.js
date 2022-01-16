@@ -17,7 +17,7 @@ export default function EventMap({ evt }) {
 
 	useEffect(() => {
 		fetch(
-			`http://www.mapquestapi.com/geocoding/v1/address?key=${process.env.NEXT_PUBLIC_MAPQUEST_API_KEY}&location=${evt.address}`
+			`https://www.mapquestapi.com/geocoding/v1/address?key=${process.env.NEXT_PUBLIC_MAPQUEST_API_KEY}&location=${evt.address}`
 		)
 			.then((response) => response.json())
 			.then((result) => {
